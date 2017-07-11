@@ -1,8 +1,6 @@
 import os
 import re
 from google.cloud import translate
-import pprint
-import codecs
 import sys
 
 """commentStripper.py
@@ -128,7 +126,7 @@ def parser(comment):
            
         c = scrubbed.strip().split('\n')
         c = ' '.join([C.strip() for C in c])
-        print c
+
         can = {'language': l,
                'tag': lang['language'],
                'comment': c}
@@ -193,7 +191,6 @@ def update(comment):
 if __name__ == '__main__':
 
     translate_client = translate.Client()
-    print ROOT 
     x = texasRanger(ROOT)
     for X in x:
         comment = parser(X)
